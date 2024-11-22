@@ -1,5 +1,5 @@
 // LOCAL HOST
-
+// SHIPS
 ###GET all ships
 GET http://localhost:9001/ships HTTP/1.1
 Content-Type: application/json
@@ -142,3 +142,424 @@ Content-Type: application/json
 ###DELETE delete a specific ship
 DELETE http://localhost:9001/ships/6740e7b9c9b11f630822ffce HTTP/1.1
 Content-Type: application/json
+
+//PILOTS
+
+###GET all pilots
+GET http://localhost:9001/pilots HTTP/1.1
+Content-Type: application/json
+
+[
+  {
+    "_id": "6740b68ef2bcd18493eda630",
+    "name": "Luke Skywalker",
+    "species": "Human",
+    "homeworld": "Tatooine",
+    "rank": "General",
+    "years_of_service": 10,
+    "piloting_skill": "Expert",
+    "famous_ship": "X-wing Fighter",
+    "is_force_sensitive": true,
+    "first_flight_date": "1977-05-25"
+  },
+  {
+    "_id": "6740b68ef2bcd18493eda631",
+    "name": "Han Solo",
+    "species": "Human",
+    "homeworld": "Corellia",
+    "rank": "Captain",
+    "years_of_service": 5,
+    "piloting_skill": "Master",
+    "famous_ship": "Millennium Falcon",
+    "is_force_sensitive": false,
+    "first_flight_date": "1977-05-25"
+  },
+  {
+    "_id": "6740b68ef2bcd18493eda632",
+    "name": "Wedge Antilles",
+    "species": "Human",
+    "homeworld": "Corellia",
+    "rank": "Colonel",
+    "years_of_service": 15,
+    "piloting_skill": "Expert",
+    "famous_ship": "X-wing Fighter",
+    "is_force_sensitive": false,
+    "first_flight_date": "1977-05-25"
+  },
+  {
+    "_id": "6740b68ef2bcd18493eda633",
+    "name": "Lando Calrissian",
+    "species": "Human",
+    "homeworld": "Socorro",
+    "rank": "Captain",
+    "years_of_service": 8,
+    "piloting_skill": "Advanced",
+    "famous_ship": "Millennium Falcon",
+    "is_force_sensitive": false,
+    "first_flight_date": "1977-05-25"
+  },
+  {
+    "_id": "6740b68ef2bcd18493eda634",
+    "name": "Hera Syndulla",
+    "species": "Twi'lek",
+    "homeworld": "Ryloth",
+    "rank": "Captain",
+    "years_of_service": 10,
+    "piloting_skill": "Expert",
+    "famous_ship": "Ghost",
+    "is_force_sensitive": false,
+    "first_flight_date": "2014-10-03"
+  },
+  {
+    "_id": "6740ec22a21db1bc29cfdaa0",
+    "name": "Ivan",
+    "species": "Human",
+    "homeworld": "Earth",
+    "rank": "General",
+    "years_of_service": 10,
+    "piloting_skill": "expert",
+    "famous_ship": "Rougue",
+    "is_force_sensitive": true,
+    "first_flight_date": "1992-04-15"
+  }
+]
+
+###GET a specific pilot
+GET http://localhost:9001/pilots/6740ec22a21db1bc29cfdaa0 HTTP/1.1
+Content-Type: application/json
+
+{
+  "_id": "6740ec22a21db1bc29cfdaa0",
+  "name": "Ivan",
+  "species": "Human",
+  "homeworld": "Earth",
+  "rank": "General",
+  "years_of_service": 10,
+  "piloting_skill": "expert",
+  "famous_ship": "Rougue",
+  "is_force_sensitive": true,
+  "first_flight_date": "1992-04-15"
+}
+
+
+###PUT change a specific pilot
+PUT http://localhost:9001/pilots/6740ec22a21db1bc29cfdaa0 HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Ivan",
+  "species": "Human",
+  "homeworld": "Earth",
+  "rank": "General",
+  "years_of_service": 10,
+  "piloting_skill": "expert",
+  "famous_ship": "Rougue",
+  "is_force_sensitive": true,
+  "first_flight_date": "2010-04-15"
+}
+
+###DELETE delete a specific pilot
+DELETE http://localhost:9001/pilots/6740ec22a21db1bc29cfdaa0 HTTP/1.1
+Content-Type: application/json
+
+
+
+###POST add a specific pilot
+POST http://localhost:9001/pilots/ HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Ivan",
+  "species": "Human",
+  "homeworld": "Earth",
+  "rank": "General",
+  "years_of_service": 10,
+  "piloting_skill": "expert",
+  "famous_ship": "Rougue",
+  "is_force_sensitive": true,
+  "first_flight_date": "2010-04-15"
+}
+
+// PRODUCTION ENVIRONMENT
+// SHIPS
+
+
+###GET all ships
+GET https://cse341-project2-me2n.onrender.com/ships HTTP/1.1
+Content-Type: application/json
+
+[
+  {
+    "_id": "6740b4d4f2bcd18493eda62a",
+    "name": "X-wing Fighter",
+    "class": "Starfighter",
+    "manufacturer": "Incom Corporation",
+    "length": 12.5,
+    "hyperdrive_rating": 1,
+    "armament": [
+      "Laser cannons",
+      "Proton torpedoes"
+    ],
+    "crew": 1,
+    "production_start_date": "1977-01-01",
+    "is_hyperspace_capable": true
+  },
+  {
+    "_id": "6740b4d4f2bcd18493eda62b",
+    "name": "Y-wing Starfighter",
+    "class": "Starfighter/Bomber",
+    "manufacturer": "Koensayr Corporation",
+    "length": 14,
+    "hyperdrive_rating": 2,
+    "armament": [
+      "Laser cannons",
+      "Proton torpedoes"
+    ],
+    "crew": 2,
+    "production_start_date": "1977-01-01",
+    "is_hyperspace_capable": true
+  },
+  {
+    "_id": "6740b4d4f2bcd18493eda62c",
+    "name": "Millennium Falcon",
+    "class": "Corellian YT-1300 light freighter",
+    "manufacturer": "Corellian Engineering Corporation",
+    "length": 34.75,
+    "hyperdrive_rating": 0.5,
+    "armament": [
+      "Laser cannons",
+      "Quad laser cannons"
+    ],
+    "crew": 3,
+    "production_start_date": "1977-01-01",
+    "is_hyperspace_capable": true
+  },
+  {
+    "_id": "6740b4d4f2bcd18493eda62d",
+    "name": "U-wing starfighter/gunship",
+    "class": "Starfighter/Gunship",
+    "manufacturer": "Kuat Drive Yards",
+    "length": 16.5,
+    "hyperdrive_rating": 1,
+    "armament": [
+      "Laser cannons",
+      "Proton torpedoes"
+    ],
+    "crew": 2,
+    "production_start_date": "2016-12-16",
+    "is_hyperspace_capable": true
+  },
+  {
+    "_id": "6740b4d4f2bcd18493eda62e",
+    "name": "Corellian Corvette",
+    "class": "Corvette",
+    "manufacturer": "Corellian Engineering Corporation",
+    "length": 150,
+    "hyperdrive_rating": 2,
+    "armament": [
+      "Turbolaser cannons, Ion cannons"
+    ],
+    "crew": 100,
+    "production_start_date": "1977-01-01",
+    "is_hyperspace_capable": true
+  }
+]
+
+###GET a specific ship
+GET https://cse341-project2-me2n.onrender.com/ships/6740b4d4f2bcd18493eda62a HTTP/1.1
+Content-Type: application/json
+
+{
+  "_id": "6740b4d4f2bcd18493eda62a",
+  "name": "X-wing Fighter",
+  "class": "Starfighter",
+  "manufacturer": "Incom Corporation",
+  "length": 12.5,
+  "hyperdrive_rating": 1,
+  "armament": [
+    "Laser cannons",
+    "Proton torpedoes"
+  ],
+  "crew": 1,
+  "production_start_date": "1977-01-01",
+  "is_hyperspace_capable": true
+}
+
+###POST add a specific ship
+POST https://cse341-project2-me2n.onrender.com/ships/ HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "B-wing Starfighter",
+  "class": "Starfighter",
+  "manufacturer": "Sienar-Jaemus Fleet Systems",
+  "length": 16.2,
+  "hyperdrive_rating": 1,
+  "armament": [
+    "Heavy laser cannons", "Proton torpedoes"
+  ],
+  "crew": 1,
+  "production_start_date": "1983-05-25",
+  "is_hyperspace_capable": true
+}
+
+###PUT change a specific ship
+PUT https://cse341-project2-me2n.onrender.com/ships/6740b4d4f2bcd18493eda62a HTTP/1.1
+Content-Type: application/json
+
+{
+    "_id": "6740b4d4f2bcd18493eda62a",
+    "name": "X-wing Fighter",
+    "class": "Starfighter",
+    "manufacturer": "Incom Corporation",
+    "length": 12.5,
+    "hyperdrive_rating": 1,
+    "armament": [
+      "Laser cannons",
+      "Proton torpedoes"
+    ],
+    "crew": 2,
+    "production_start_date": "1977-01-01",
+    "is_hyperspace_capable": true
+  }
+
+###DELETE delete a specific ship
+DELETE https://cse341-project2-me2n.onrender.com/ships/6740e7b9c9b11f630822ffce HTTP/1.1
+Content-Type: application/json
+
+//PILOTS
+
+###GET all pilots
+GET https://cse341-project2-me2n.onrender.com/pilots HTTP/1.1
+Content-Type: application/json
+
+[
+  {
+    "_id": "6740b68ef2bcd18493eda630",
+    "name": "Luke Skywalker",
+    "species": "Human",
+    "homeworld": "Tatooine",
+    "rank": "General",
+    "years_of_service": 10,
+    "piloting_skill": "Expert",
+    "famous_ship": "X-wing Fighter",
+    "is_force_sensitive": true,
+    "first_flight_date": "1977-05-25"
+  },
+  {
+    "_id": "6740b68ef2bcd18493eda631",
+    "name": "Han Solo",
+    "species": "Human",
+    "homeworld": "Corellia",
+    "rank": "Captain",
+    "years_of_service": 5,
+    "piloting_skill": "Master",
+    "famous_ship": "Millennium Falcon",
+    "is_force_sensitive": false,
+    "first_flight_date": "1977-05-25"
+  },
+  {
+    "_id": "6740b68ef2bcd18493eda632",
+    "name": "Wedge Antilles",
+    "species": "Human",
+    "homeworld": "Corellia",
+    "rank": "Colonel",
+    "years_of_service": 15,
+    "piloting_skill": "Expert",
+    "famous_ship": "X-wing Fighter",
+    "is_force_sensitive": false,
+    "first_flight_date": "1977-05-25"
+  },
+  {
+    "_id": "6740b68ef2bcd18493eda633",
+    "name": "Lando Calrissian",
+    "species": "Human",
+    "homeworld": "Socorro",
+    "rank": "Captain",
+    "years_of_service": 8,
+    "piloting_skill": "Advanced",
+    "famous_ship": "Millennium Falcon",
+    "is_force_sensitive": false,
+    "first_flight_date": "1977-05-25"
+  },
+  {
+    "_id": "6740b68ef2bcd18493eda634",
+    "name": "Hera Syndulla",
+    "species": "Twi'lek",
+    "homeworld": "Ryloth",
+    "rank": "Captain",
+    "years_of_service": 10,
+    "piloting_skill": "Expert",
+    "famous_ship": "Ghost",
+    "is_force_sensitive": false,
+    "first_flight_date": "2014-10-03"
+  },
+  {
+    "_id": "6740ec22a21db1bc29cfdaa0",
+    "name": "Ivan",
+    "species": "Human",
+    "homeworld": "Earth",
+    "rank": "General",
+    "years_of_service": 10,
+    "piloting_skill": "expert",
+    "famous_ship": "Rougue",
+    "is_force_sensitive": true,
+    "first_flight_date": "1992-04-15"
+  }
+]
+
+###GET a specific pilot
+GET https://cse341-project2-me2n.onrender.com/pilots/6740ec22a21db1bc29cfdaa0 HTTP/1.1
+Content-Type: application/json
+
+{
+  "_id": "6740ec22a21db1bc29cfdaa0",
+  "name": "Ivan",
+  "species": "Human",
+  "homeworld": "Earth",
+  "rank": "General",
+  "years_of_service": 10,
+  "piloting_skill": "expert",
+  "famous_ship": "Rougue",
+  "is_force_sensitive": true,
+  "first_flight_date": "1992-04-15"
+}
+
+
+###PUT change a specific pilot
+PUT https://cse341-project2-me2n.onrender.com/pilots/6740ec22a21db1bc29cfdaa0 HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Ivan",
+  "species": "Human",
+  "homeworld": "Earth",
+  "rank": "General",
+  "years_of_service": 10,
+  "piloting_skill": "expert",
+  "famous_ship": "Rougue",
+  "is_force_sensitive": true,
+  "first_flight_date": "2010-04-15"
+}
+
+###DELETE delete a specific pilot
+DELETE https://cse341-project2-me2n.onrender.com/pilots/6740ec22a21db1bc29cfdaa0 HTTP/1.1
+Content-Type: application/json
+
+
+
+###POST add a specific pilot
+POST https://cse341-project2-me2n.onrender.com/pilots/ HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Ivan",
+  "species": "Human",
+  "homeworld": "Earth",
+  "rank": "General",
+  "years_of_service": 10,
+  "piloting_skill": "expert",
+  "famous_ship": "Rougue",
+  "is_force_sensitive": true,
+  "first_flight_date": "2010-04-15"
+}
