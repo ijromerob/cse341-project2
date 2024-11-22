@@ -5,7 +5,7 @@
     "description": "This API will bring balance to the force and information about the starships used and their pilots",
     "version": "1.0.0"
   },
-  "host": "https://cse341-project2-me2n.onrender.com",
+  "host": "cse341-project2-me2n.onrender.com",
   "basePath": "/",
   "schemes": ["https"],
   "paths": {
