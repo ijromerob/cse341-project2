@@ -3,7 +3,7 @@ const ObjectId = require('mongodb').ObjectId;
 
 // This controller will retrieve all ships
 const getAllShips = async (req, res) => {
-  // #swagger tags=['Ships']
+  //#swagger.tags=['Ships']
   const result = await mongodb
     .getDatabase()
     .db()
@@ -18,7 +18,7 @@ const getAllShips = async (req, res) => {
 
 // This controller will retrieve a specific ship
 const getShip = async (req, res) => {
-  // #swagger tags=['Ships']
+  //#swagger.tags=['Ships']
   const shipId = new ObjectId(req.params.id);
   const result = await mongodb
     .getDatabase()
@@ -34,7 +34,7 @@ const getShip = async (req, res) => {
 
 // this controller will add a new ship to the fleet
 const addNewShip = async (req, res) => {
-  // #swagger tags=['Ships']
+  //#swagger.tags=['Ships']
 
   const ship = {
     name: req.body.name,
@@ -65,7 +65,7 @@ const addNewShip = async (req, res) => {
 
 //this controller updates a ship's information
 const updateShip = async (req, res) => {
-  // #swagger tags=['Ships']
+  //#swagger.tags=['Ships']
 
   const ship = {
     name: req.body.name,
@@ -98,7 +98,7 @@ const updateShip = async (req, res) => {
 
 //This controller will delete a ship
 const deleteShip = async (req, res) => {
-  // #swagger tags=['Ships']
+  //#swagger.tags=['Ships']
 
   const shipId = new ObjectId(req.params.id);
 

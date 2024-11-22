@@ -3,7 +3,7 @@ const ObjectId = require('mongodb').ObjectId;
 
 // This controller will retrive all pilots
 const getAllPilots = async (req, res) => {
-  // #swagger tags=['Pilots']
+  //#swagger.tags=['Pilots']
   const result = await mongodb
     .getDatabase()
     .db()
@@ -18,7 +18,7 @@ const getAllPilots = async (req, res) => {
 
 // This controller will retrieve a specific pilot based on the ID
 const getPilot = async (req, res) => {
-  // #swagger tags=['Pilots']
+  //#swagger.tags=['Pilots']
   const pilotId = new ObjectId(req.params.id);
 
   const result = await mongodb
@@ -35,7 +35,7 @@ const getPilot = async (req, res) => {
 
 // This controller will add a new pilot to the database
 const addNewPilot = async (req, res) => {
-  // #swagger tags=['Pilots']
+  //#swagger.tags=['Pilots']
   const pilot = {
     name: req.body.name,
     species: req.body.species,
@@ -65,7 +65,7 @@ const addNewPilot = async (req, res) => {
 
 //this controller updates a pilot's information
 const updatePilot = async (req, res) => {
-  // #swagger tags=['Pilots']
+  //#swagger.tags=['Pilots']
 
   const pilot = {
     name: req.body.name,
@@ -98,7 +98,7 @@ const updatePilot = async (req, res) => {
 
 // This controller will delete a pilot
 const deletePilot = async (req, res) => {
-  // #swagger tags=['Pilots']
+  //#swagger.tags=['Pilots']
 
   const pilotId = new ObjectId(req.params.id);
 

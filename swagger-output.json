@@ -5,14 +5,13 @@
     "description": "This API will bring balance to the force and information about the starships used and their pilots",
     "version": "1.0.0"
   },
-  "host": "localhost:9001",
+  "host": "https://cse341-project2-me2n.onrender.com",
   "basePath": "/",
-  "schemes": [
-    "http"
-  ],
+  "schemes": ["https", "http"],
   "paths": {
     "/": {
       "get": {
+        "tags": ["Hello World"],
         "description": "",
         "responses": {
           "200": {
@@ -21,44 +20,145 @@
         }
       }
     },
-    "/api-docs": {
-      "get": {
-        "description": "",
-        "responses": {
-          "default": {
-            "description": ""
-          }
-        }
-      }
-    },
     "/pilots/": {
       "get": {
+        "tags": ["Pilots"],
         "description": "",
+        "produces": ["application/json"],
         "responses": {
-          "default": {
-            "description": ""
+          "200": {
+            "description": "OK"
           }
         }
       },
       "post": {
+        "tags": ["Pilots"],
         "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "example": "any"
+                },
+                "species": {
+                  "example": "any"
+                },
+                "homeworld": {
+                  "example": "any"
+                },
+                "rank": {
+                  "example": "any"
+                },
+                "years_of_service": {
+                  "example": "any"
+                },
+                "piloting_skill": {
+                  "example": "any"
+                },
+                "famous_ship": {
+                  "example": "any"
+                },
+                "is_force_sensitive": {
+                  "example": "any"
+                },
+                "first_flight_date": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
         "responses": {
-          "default": {
-            "description": ""
+          "204": {
+            "description": "No Content"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }
     },
     "/pilots/{id}": {
       "get": {
+        "tags": ["Pilots"],
         "description": "",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "responses": {
-          "default": {
-            "description": ""
+          "200": {
+            "description": "OK"
           }
         }
       },
       "put": {
+        "tags": ["Pilots"],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "example": "any"
+                },
+                "species": {
+                  "example": "any"
+                },
+                "homeworld": {
+                  "example": "any"
+                },
+                "rank": {
+                  "example": "any"
+                },
+                "years_of_service": {
+                  "example": "any"
+                },
+                "piloting_skill": {
+                  "example": "any"
+                },
+                "famous_ship": {
+                  "example": "any"
+                },
+                "is_force_sensitive": {
+                  "example": "any"
+                },
+                "first_flight_date": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Pilots"],
         "description": "",
         "parameters": [
           {
@@ -69,48 +169,154 @@
           }
         ],
         "responses": {
-          "default": {
-            "description": ""
-          }
-        }
-      },
-      "delete": {
-        "description": "",
-        "responses": {
-          "default": {
-            "description": ""
+          "204": {
+            "description": "No Content"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }
     },
-    "ships/": {
+    "/ships/": {
       "get": {
+        "tags": ["Ships"],
         "description": "",
+        "produces": ["application/json"],
         "responses": {
-          "default": {
-            "description": ""
+          "200": {
+            "description": "OK"
           }
         }
       },
       "post": {
+        "tags": ["Ships"],
         "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "example": "any"
+                },
+                "class": {
+                  "example": "any"
+                },
+                "manufacturer": {
+                  "example": "any"
+                },
+                "length": {
+                  "example": "any"
+                },
+                "hyperdrive_rating": {
+                  "example": "any"
+                },
+                "armament": {
+                  "example": "any"
+                },
+                "crew": {
+                  "example": "any"
+                },
+                "production_start_date": {
+                  "example": "any"
+                },
+                "is_hyperspace_capable": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
         "responses": {
-          "default": {
-            "description": ""
+          "204": {
+            "description": "No Content"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }
     },
-    "ships/{id}": {
+    "/ships/{id}": {
       "get": {
+        "tags": ["Ships"],
         "description": "",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "responses": {
-          "default": {
-            "description": ""
+          "200": {
+            "description": "OK"
           }
         }
       },
       "put": {
+        "tags": ["Ships"],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "example": "any"
+                },
+                "class": {
+                  "example": "any"
+                },
+                "manufacturer": {
+                  "example": "any"
+                },
+                "length": {
+                  "example": "any"
+                },
+                "hyperdrive_rating": {
+                  "example": "any"
+                },
+                "armament": {
+                  "example": "any"
+                },
+                "crew": {
+                  "example": "any"
+                },
+                "production_start_date": {
+                  "example": "any"
+                },
+                "is_hyperspace_capable": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Ships"],
         "description": "",
         "parameters": [
           {
@@ -121,16 +327,11 @@
           }
         ],
         "responses": {
-          "default": {
-            "description": ""
-          }
-        }
-      },
-      "delete": {
-        "description": "",
-        "responses": {
-          "default": {
-            "description": ""
+          "204": {
+            "description": "No Content"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }

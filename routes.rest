@@ -1,0 +1,144 @@
+// LOCAL HOST
+
+###GET all ships
+GET http://localhost:9001/ships HTTP/1.1
+Content-Type: application/json
+
+[
+  {
+    "_id": "6740b4d4f2bcd18493eda62a",
+    "name": "X-wing Fighter",
+    "class": "Starfighter",
+    "manufacturer": "Incom Corporation",
+    "length": 12.5,
+    "hyperdrive_rating": 1,
+    "armament": [
+      "Laser cannons",
+      "Proton torpedoes"
+    ],
+    "crew": 1,
+    "production_start_date": "1977-01-01",
+    "is_hyperspace_capable": true
+  },
+  {
+    "_id": "6740b4d4f2bcd18493eda62b",
+    "name": "Y-wing Starfighter",
+    "class": "Starfighter/Bomber",
+    "manufacturer": "Koensayr Corporation",
+    "length": 14,
+    "hyperdrive_rating": 2,
+    "armament": [
+      "Laser cannons",
+      "Proton torpedoes"
+    ],
+    "crew": 2,
+    "production_start_date": "1977-01-01",
+    "is_hyperspace_capable": true
+  },
+  {
+    "_id": "6740b4d4f2bcd18493eda62c",
+    "name": "Millennium Falcon",
+    "class": "Corellian YT-1300 light freighter",
+    "manufacturer": "Corellian Engineering Corporation",
+    "length": 34.75,
+    "hyperdrive_rating": 0.5,
+    "armament": [
+      "Laser cannons",
+      "Quad laser cannons"
+    ],
+    "crew": 3,
+    "production_start_date": "1977-01-01",
+    "is_hyperspace_capable": true
+  },
+  {
+    "_id": "6740b4d4f2bcd18493eda62d",
+    "name": "U-wing starfighter/gunship",
+    "class": "Starfighter/Gunship",
+    "manufacturer": "Kuat Drive Yards",
+    "length": 16.5,
+    "hyperdrive_rating": 1,
+    "armament": [
+      "Laser cannons",
+      "Proton torpedoes"
+    ],
+    "crew": 2,
+    "production_start_date": "2016-12-16",
+    "is_hyperspace_capable": true
+  },
+  {
+    "_id": "6740b4d4f2bcd18493eda62e",
+    "name": "Corellian Corvette",
+    "class": "Corvette",
+    "manufacturer": "Corellian Engineering Corporation",
+    "length": 150,
+    "hyperdrive_rating": 2,
+    "armament": [
+      "Turbolaser cannons, Ion cannons"
+    ],
+    "crew": 100,
+    "production_start_date": "1977-01-01",
+    "is_hyperspace_capable": true
+  }
+]
+
+###GET a specific ship
+GET http://localhost:9001/ships/6740b4d4f2bcd18493eda62a HTTP/1.1
+Content-Type: application/json
+
+{
+  "_id": "6740b4d4f2bcd18493eda62a",
+  "name": "X-wing Fighter",
+  "class": "Starfighter",
+  "manufacturer": "Incom Corporation",
+  "length": 12.5,
+  "hyperdrive_rating": 1,
+  "armament": [
+    "Laser cannons",
+    "Proton torpedoes"
+  ],
+  "crew": 1,
+  "production_start_date": "1977-01-01",
+  "is_hyperspace_capable": true
+}
+
+###POST add a specific ship
+POST http://localhost:9001/ships/ HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "B-wing Starfighter",
+  "class": "Starfighter",
+  "manufacturer": "Sienar-Jaemus Fleet Systems",
+  "length": 16.2,
+  "hyperdrive_rating": 1,
+  "armament": [
+    "Heavy laser cannons", "Proton torpedoes"
+  ],
+  "crew": 1,
+  "production_start_date": "1983-05-25",
+  "is_hyperspace_capable": true
+}
+
+###PUT change a specific ship
+PUT http://localhost:9001/ships/6740b4d4f2bcd18493eda62a HTTP/1.1
+Content-Type: application/json
+
+{
+    "_id": "6740b4d4f2bcd18493eda62a",
+    "name": "X-wing Fighter",
+    "class": "Starfighter",
+    "manufacturer": "Incom Corporation",
+    "length": 12.5,
+    "hyperdrive_rating": 1,
+    "armament": [
+      "Laser cannons",
+      "Proton torpedoes"
+    ],
+    "crew": 2,
+    "production_start_date": "1977-01-01",
+    "is_hyperspace_capable": true
+  }
+
+###DELETE delete a specific ship
+DELETE http://localhost:9001/ships/6740e7b9c9b11f630822ffce HTTP/1.1
+Content-Type: application/json
