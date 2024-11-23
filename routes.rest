@@ -140,7 +140,7 @@ Content-Type: application/json
   }
 
 ###DELETE delete a specific ship
-DELETE http://localhost:9001/ships/6740e7b9c9b11f630822ffce HTTP/1.1
+DELETE http://localhost:9001/ships/674102a175c96544582455f0 HTTP/1.1
 Content-Type: application/json
 
 //PILOTS
@@ -225,20 +225,20 @@ Content-Type: application/json
 ]
 
 ###GET a specific pilot
-GET http://localhost:9001/pilots/6740ec22a21db1bc29cfdaa0 HTTP/1.1
+GET http://localhost:9001/pilots/6740b68ef2bcd18493eda634 HTTP/1.1
 Content-Type: application/json
 
 {
-  "_id": "6740ec22a21db1bc29cfdaa0",
-  "name": "Ivan",
-  "species": "Human",
-  "homeworld": "Earth",
-  "rank": "General",
-  "years_of_service": 10,
-  "piloting_skill": "expert",
-  "famous_ship": "Rougue",
-  "is_force_sensitive": true,
-  "first_flight_date": "1992-04-15"
+    "_id": "6740b68ef2bcd18493eda634",
+    "name": "Hera Syndulla",
+    "species": "Twi'lek",
+    "homeworld": "Ryloth",
+    "rank": "Captain",
+    "years_of_service": 10,
+    "piloting_skill": "Expert",
+    "famous_ship": "Ghost",
+    "is_force_sensitive": false,
+    "first_flight_date": "2014-10-03"
 }
 
 
@@ -259,7 +259,7 @@ Content-Type: application/json
 }
 
 ###DELETE delete a specific pilot
-DELETE http://localhost:9001/pilots/6740ec22a21db1bc29cfdaa0 HTTP/1.1
+DELETE http://localhost:9001/pilots/6740f4ee7551e562fcfada72 HTTP/1.1
 Content-Type: application/json
 
 
