@@ -8,18 +8,18 @@
   "host": "cse341-project2-me2n.onrender.com",
   "basePath": "/",
   "schemes": ["https"],
-  "paths": {
-    "/": {
-      "get": {
-        "tags": ["Hello World"],
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
+  "securityDefinitions": {
+    "oauth2": {
+      "type": "oauth2",
+      "flow": "implicit",
+      "authorizationUrl": "http://cse341-project2-me2n.onrender.com/github/callback",
+      "scopes": {
+        "write": "Grants write access",
+        "read": "Grants read access"
       }
-    },
+    }
+  },
+  "paths": {
     "/pilots/": {
       "get": {
         "tags": ["Pilots"],
@@ -79,7 +79,12 @@
           "500": {
             "description": "Internal Server Error"
           }
-        }
+        },
+        "security": [
+          {
+            "oauth2": ["write"]
+          }
+        ]
       }
     },
     "/pilots/{id}": {
@@ -155,7 +160,12 @@
           "500": {
             "description": "Internal Server Error"
           }
-        }
+        },
+        "security": [
+          {
+            "oauth2": ["write"]
+          }
+        ]
       },
       "delete": {
         "tags": ["Pilots"],
@@ -175,7 +185,12 @@
           "500": {
             "description": "Internal Server Error"
           }
-        }
+        },
+        "security": [
+          {
+            "oauth2": ["write"]
+          }
+        ]
       }
     },
     "/ships/": {
@@ -237,7 +252,12 @@
           "500": {
             "description": "Internal Server Error"
           }
-        }
+        },
+        "security": [
+          {
+            "oauth2": ["write"]
+          }
+        ]
       }
     },
     "/ships/{id}": {
@@ -313,7 +333,12 @@
           "500": {
             "description": "Internal Server Error"
           }
-        }
+        },
+        "security": [
+          {
+            "oauth2": ["write"]
+          }
+        ]
       },
       "delete": {
         "tags": ["Ships"],
@@ -333,7 +358,12 @@
           "500": {
             "description": "Internal Server Error"
           }
-        }
+        },
+        "security": [
+          {
+            "oauth2": ["write"]
+          }
+        ]
       }
     }
   }

@@ -2,6 +2,7 @@ const router = require('express').Router();
 const shipsController = require('../controllers/shipsController');
 const { shipRules, validateShip } = require('../utilities/shipValidation');
 const { handleErrors, validateObjectId } = require('../utilities');
+const { isAuthenticated } = require('../utilities/authenticate');
 
 // This route will retrieve all the ships of the rebel alliance
 router.get('/', handleErrors(shipsController.getAllShips));
@@ -13,6 +14,7 @@ router.get('/:id', validateObjectId, handleErrors(shipsController.getShip));
 router.post(
   '/',
   shipRules(),
+  isAuthenticated,
   validateShip,
   handleErrors(shipsController.addNewShip)
 );
@@ -20,6 +22,7 @@ router.post(
 // This route will modify the specifications of a ship in the rebel alliance
 router.put(
   '/:id',
+  isAuthenticated,
   shipRules(),
   validateShip,
   validateObjectId,
@@ -29,6 +32,7 @@ router.put(
 // This route will delete a ship of the rebel alliance
 router.delete(
   '/:id',
+  isAuthenticated,
   validateObjectId,
   handleErrors(shipsController.deleteShip)
 );
